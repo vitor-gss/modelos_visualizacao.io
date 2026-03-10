@@ -1,0 +1,29 @@
+#root {
+  --primary: var(--color-violet-500);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.checkbox {
+  accent-color: var(--primary);
+}
+
+.checkbox:hover {
+  accent-color: var(--color-violet-500);
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+
+  background: white;
+  padding: calc(var(--spacing) * 8);
+  border-radius: var(--radius-xl);
+  box-sizing: border-box;
+}
