@@ -27,3 +27,9 @@ h1 {
   border-radius: var(--radius-xl);
   box-sizing: border-box;
 }
+
+@media (min-width: 2160px) {
+  #root{
+    max-width: 1440px;
+  }
+}
