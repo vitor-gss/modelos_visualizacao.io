@@ -1,9 +1,8 @@
 const data = {
   labels: [
     "Estruturas",
-    "Recursão",
     "Expressões",
-    "Entrada e saída de dados",
+    "Entrada/saída de dados",
     "Tipo de dados",
     "Declaração",
     "Recursividade",
@@ -11,15 +10,20 @@ const data = {
   datasets: [
     {
       label: "Aluno",
-      data: [65, 59, 80, 81, 56, 55, 100],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      data: [10, 30, 60, 80, 55, 100],
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderColor: "rgb(54, 162, 235)",
+      pointBackgroundColor: "rgb(54, 162, 235)",
     },
     {
       label: "Turma",
-      data: [83, 77, 25, 13, 4, 81, 35],
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      data: [77, 25, 13, 4, 81, 35],
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      borderColor: "rgb(255, 99, 132)",
+      pointBackgroundColor: "rgb(255, 99, 132)",
     },
   ],
+  
 };
 
-export default data
+export default data;
