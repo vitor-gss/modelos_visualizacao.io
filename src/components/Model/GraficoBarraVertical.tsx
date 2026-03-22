@@ -32,21 +32,13 @@ const options: ChartOptions<"bar"> = {
     datalabels: {
       anchor: "end",
       align: "top",
-      color: "#000",
-      font: { weight: "bold", size: 14 },
-    },
-  },
-  layout: {
-    padding: {
-      top: 30,
+      color: "#e5e7eb",
+      font: { weight: "bold" },
     },
   },
   scales: {
     y: {
       beginAtZero: true,
-      grid: {
-        color: "#e5e5e5",
-      },
     },
     x: {
       ticks: {
