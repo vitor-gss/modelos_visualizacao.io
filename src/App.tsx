@@ -1,5 +1,6 @@
 import { ChartBarBig } from "lucide-react";
 import "./App.css";
+import "./components/Model/css/Table.css"
 import { BotaoCheck } from "./components/BotaoCheck";
 import { Header } from "./components/Header";
 import { ListaBotoes } from "./components/ListaBotoes";
@@ -9,6 +10,8 @@ import { GraficoBarraLateral } from "./components/Model/GraficoBarraLateral";
 import { GraficoRadar } from "./components/Model/GraficoRadar";
 import { Grafico } from "./components/Model/Grafico";
 import { ModeloEstrelas } from "./components/Model/ModeloEstrelas";
+import { ModeloTabela } from "./components/Model/ModeloTabela";
+import { ModeloTreemap } from "./components/Model/ModeloTreemap";
 
 function App() {
   interface modelosProps {
@@ -33,8 +36,8 @@ function App() {
     // { label: "emojis", ativo: false },
     // { label: "velocímetros", ativo: false },
     { label: "estrelas", ativo: false, componente: ModeloEstrelas },
-    // { label: "tabelas", ativo: false },
-    // { label: "bolhas", ativo: false },
+    { label: "tabelas", ativo: false, componente: ModeloTabela },
+    { label: "treemap", ativo: false, componente: ModeloTreemap },
   ]);
 
   /**
