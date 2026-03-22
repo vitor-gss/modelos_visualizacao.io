@@ -38,14 +38,14 @@ export const ModeloEstrelas = () => {
       .reduce((a, b) => a + b, 0) / qntdDados;
 
   return (
-    <div className="flex flex-col h-full justify-between">
+    <div className="flex flex-col h-full justify-between text-white ">
       {data.labels.map((label, i) => (
         <div className="flex flex-row justify-between" key={label}>
-          <span className="text-black text-sm">{label}</span>
+          <span className="text-sm">{label}</span>
           <span className="">{mostrarEstrelas(data.datasets[0].data[i])}</span>
         </div>
       ))}
-      <span className="text-black">
+      <span className="">
         {pontuacaoTotal.toFixed(1)} de média baseada em {qntdDados} tópicos
       </span>
     </div>
