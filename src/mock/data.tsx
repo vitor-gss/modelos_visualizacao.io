@@ -2,7 +2,7 @@ const data = {
   labels: [
     "Estruturas",
     "Expressões",
-    "Entrada/saída de dados",
+    "E/S de dados",
     "Tipo de dados",
     "Declaração",
     "Recursividade",
@@ -11,9 +11,9 @@ const data = {
     {
       label: "Aluno",
       data: [10, 30, 60, 80, 55, 100],
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-      borderColor: "rgb(54, 162, 235)",
-      pointBackgroundColor: "rgb(54, 162, 235)",
+      backgroundColor: "rgba(165, 54, 235, 0.5)",
+      borderColor: "rgba(165, 54, 235)",
+      pointBackgroundColor: "rgba(165, 54, 235)",
     },
     {
       label: "Turma",
