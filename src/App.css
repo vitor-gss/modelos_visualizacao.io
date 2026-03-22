@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-weight: 600;
 }
@@ -20,16 +24,8 @@ h1 {
 
 .chart-container {
   position: relative;
-  height: 400px;
 
-  background: white;
   padding: calc(var(--spacing) * 8);
   border-radius: var(--radius-xl);
   box-sizing: border-box;
-}
-
-@media (min-width: 2160px) {
-  #root{
-    max-width: 1440px;
-  }
 }
