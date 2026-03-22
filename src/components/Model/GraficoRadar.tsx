@@ -6,10 +6,17 @@ import data from "../../mock/data";
 const datas = {
   ...data,
   options: {
-    layout: {
-      padding: 30,
+    scales: {
+      r: {
+        angleLines: {
+          display: false,
+        },
+        suggestedMin: 50,
+        suggestedMax: 100,
+      },
     },
   },
+
 };
 
 export const GraficoRadar = () => {
