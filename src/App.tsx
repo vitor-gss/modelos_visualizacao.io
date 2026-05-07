@@ -1,6 +1,6 @@
 import { ChartBarBig } from "lucide-react";
 import "./App.css";
-import "./components/Model/css/Table.css"
+import "./components/Model/css/Table.css";
 import { BotaoCheck } from "./components/BotaoCheck";
 import { Header } from "./components/Header";
 import { ListaBotoes } from "./components/ListaBotoes";
@@ -12,6 +12,7 @@ import { Grafico } from "./components/Model/Grafico";
 import { ModeloEstrelas } from "./components/Model/ModeloEstrelas";
 import { ModeloTabela } from "./components/Model/ModeloTabela";
 import { ModeloTreemap } from "./components/Model/ModeloTreemap";
+import { ModeloEmojis } from "./components/Model/ModeloEmojis";
 
 function App() {
   interface modelosProps {
@@ -28,7 +29,7 @@ function App() {
      */
     componente: ElementType;
   }
-  
+
   const [modelos, setModelos] = useState<modelosProps[]>([
     { label: "barras", ativo: false, componente: GraficoBarraVertical },
     { label: "barras laterais", ativo: false, componente: GraficoBarraLateral },
@@ -38,6 +39,7 @@ function App() {
     { label: "estrelas", ativo: false, componente: ModeloEstrelas },
     { label: "tabelas", ativo: false, componente: ModeloTabela },
     { label: "treemap", ativo: false, componente: ModeloTreemap },
+    { label: "emojis", ativo: false, componente: ModeloEmojis },
   ]);
 
   /**
@@ -88,7 +90,7 @@ function App() {
                   hover:bg-violet-700 active:bg-violet-800 active:scale-95
                     ease-in-out duration-200"
       >
-        <ChartBarBig/> Marcar todas as opções
+        <ChartBarBig /> Marcar todas as opções
       </button>
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
         {modelos.map((component) => {
