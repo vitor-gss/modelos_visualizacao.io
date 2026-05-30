@@ -31,15 +31,14 @@ function App() {
   }
 
   const [modelos, setModelos] = useState<modelosProps[]>([
-    { label: "barras", ativo: false, componente: GraficoBarraVertical },
+    { label: "barras", ativo: true, componente: GraficoBarraVertical },
     { label: "barras laterais", ativo: false, componente: GraficoBarraLateral },
-    { label: "radar", ativo: false, componente: GraficoRadar },
-    // { label: "emojis", ativo: false },
+    { label: "radar", ativo: true, componente: GraficoRadar },
     // { label: "velocímetros", ativo: false },
     { label: "estrelas", ativo: false, componente: ModeloEstrelas },
     { label: "tabelas", ativo: false, componente: ModeloTabela },
     { label: "treemap", ativo: false, componente: ModeloTreemap },
-    { label: "emojis", ativo: false, componente: ModeloEmojis },
+    { label: "emojis", ativo: true, componente: ModeloEmojis },
   ]);
 
   /**
