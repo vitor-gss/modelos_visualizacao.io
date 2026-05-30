@@ -38,7 +38,7 @@ export const ModeloEstrelas = () => {
       .reduce((a, b) => a + b, 0) / qntdDados;
 
   return (
-    <div className="flex flex-col h-full justify-between text-white ">
+    <div className="flex flex-col h-full w-full justify-between text-white ">
       {data.labels.map((label, i) => (
         <div className="flex flex-row justify-between" key={label}>
           <span className="text-sm">{label}</span>
