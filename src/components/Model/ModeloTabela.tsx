@@ -17,7 +17,7 @@ export const ModeloTabela = () => {
         </thead>
         <tbody>
           {data.labels.map((label, i) => (
-            <tr>
+            <tr key={i}>
               <th scope="row" className="font-normal">{label}</th>
               <td className="">{data.datasets[0].data[i] <= 20 && <Check />}</td>
               <td className="">
