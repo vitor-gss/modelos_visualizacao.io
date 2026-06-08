@@ -7,7 +7,7 @@ table {
 
 thead,
 tfoot {
-  background-color: var(--color-violet-900);
+  background-color: var(--color-purple-900);
 }
 
 th,
@@ -21,7 +21,7 @@ td:last-of-type {
 }
 
 tbody > tr:nth-of-type(even) {
-  background-color: var(--color-violet-500);
+  background-color: var(--color-purple-500);
 }
 
 tfoot th {

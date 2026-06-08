@@ -15,7 +15,7 @@ export const ModeloTreemap = () => {
           width={width}
           height={height}
           style={{
-            fill: "oklch(65% 0.25 292.717)",
+            fill: "rgba(165, 54, 235)",
             stroke: "#fff",
             strokeWidth: 1,
           }}
