@@ -36,9 +36,9 @@ function App() {
     { label: "radar", ativo: true, componente: GraficoRadar },
     // { label: "velocímetros", ativo: false },
     { label: "estrelas", ativo: false, componente: ModeloEstrelas },
+    { label: "emojis", ativo: true, componente: ModeloEmojis },
     { label: "tabelas", ativo: false, componente: ModeloTabela },
     { label: "treemap", ativo: false, componente: ModeloTreemap },
-    { label: "emojis", ativo: true, componente: ModeloEmojis },
   ]);
 
   /**
@@ -84,14 +84,14 @@ function App() {
       </ListaBotoes>
       <button
         onClick={ativarTodos}
-        className="bg-violet-600 rounded-full p-4 px-8 w-full md:max-w-fit
+        className="bg-blue-600 rounded-full p-4 px-8 w-full md:max-w-fit
                     flex flex-row justify-center place-items-center gap-4
-                  hover:bg-violet-700 active:bg-violet-800 active:scale-95
+                  hover:bg-blue-700 active:bg-blue-800 active:scale-95
                     ease-in-out duration-200"
       >
         <ChartBarBig /> Marcar todas as opções
       </button>
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 w-full">
         {modelos.map((component) => {
           if (!component.ativo) return null;
           const GraficoAtual = component.componente;

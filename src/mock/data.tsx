@@ -11,16 +11,16 @@ const data = {
     {
       label: "Aluno",
       data: [10, 30, 60, 80, 55, 100],
-      backgroundColor: "rgba(165, 54, 235, 0.5)",
-      borderColor: "rgba(165, 54, 235)",
-      pointBackgroundColor: "rgba(165, 54, 235)",
+      backgroundColor: "#2563eba0",
+      borderColor: "#2563eb",
+      pointBackgroundColor: "#2563eb",
     },
     {
-      label: "Turma",
+      label: "Sistema",
       data: [77, 25, 13, 4, 81, 35],
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      borderColor: "rgb(255, 99, 132)",
-      pointBackgroundColor: "rgb(255, 99, 132)",
+      backgroundColor: "#0d9488a0",
+      borderColor: "#0d9488",
+      pointBackgroundColor: "#0d9488",
     },
   ],
   

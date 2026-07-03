@@ -7,7 +7,7 @@ export const Estrela = ({ disabled }: { disabled?: boolean }) => {
   return (
     <>
       <svg
-        className={`w-5 h-5 ${disabled ? "text-violet-100/50" : "text-violet-400"}`}
+        className={`w-3.5 h-3.5 sm:w-5 sm:h-5 ${disabled ? "text-(--primary)/30" : "text-(--primary)"} `}
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         width="24"

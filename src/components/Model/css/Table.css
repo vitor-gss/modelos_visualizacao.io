@@ -1,19 +1,19 @@
 table {
   border-collapse: collapse;
   font-family: sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   letter-spacing: 1px;
 }
 
 thead,
 tfoot {
-  background-color: var(--color-purple-900);
+  background-color: var(--color-blue-900);
 }
 
 th,
 td {
-  /* border: 1px solid rgb(160 160 160); */
-  padding: 8px 10px;
+  border: 1px solid var(--color-blue-800);
+  padding: 8px;
 }
 
 td:last-of-type {
@@ -21,7 +21,7 @@ td:last-of-type {
 }
 
 tbody > tr:nth-of-type(even) {
-  background-color: var(--color-purple-500);
+  background-color: var(--color-blue-500);
 }
 
 tfoot th {

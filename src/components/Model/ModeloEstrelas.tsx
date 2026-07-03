@@ -1,29 +1,10 @@
 import { Estrela } from "./Estrela";
 import data from "../../mock/data";
+import CalcularPontuacao from "../../utils/CalcularPontuacao";
 
 export const ModeloEstrelas = () => {
-  const qntdDados = data.labels.length;
-
-  const calcularPontuacao = (pontuacao: number) => {
-    const qntdEstrelas = Math.floor(pontuacao / 20); // * número mágico
-    return qntdEstrelas;
-  };
-
   const mostrarEstrelas = (pontuacao: number) => {
-    const qntdEstrelas = calcularPontuacao(pontuacao);
-
-    // const estrelas = [
-    //   <Estrela disabled={true} />,
-    //   <Estrela disabled={true} />,
-    //   <Estrela disabled={true} />,
-    //   <Estrela disabled={true} />,
-    //   <Estrela disabled={true} />,
-    // ];
-
-    // for (let i = 0; i < pontuacao; i++) {
-    //   estrelas.unshift(<Estrela/>);
-    //   estrelas.pop();
-    // }
+    const qntdEstrelas = CalcularPontuacao(pontuacao)
 
     const estrelas = Array.from({ length: 5 }, (_, i) => (
       <Estrela key={i} disabled={i >= qntdEstrelas} />
@@ -32,22 +13,28 @@ export const ModeloEstrelas = () => {
     return <div className="flex flex-row">{estrelas}</div>;
   };
 
-  const pontuacaoTotal =
-    data.datasets[0].data
-      .map((d) => calcularPontuacao(d))
-      .reduce((a, b) => a + b, 0) / qntdDados;
-
   return (
-    <div className="flex flex-col h-full w-full justify-between text-white ">
+    <div className="flex flex-col h-full w-full justify-between text-white">
+      <div className="grid grid-cols-3 justify-between text-lg">
+        <span className="text-left">Tópico</span>
+        <span className="text-right">Aluno</span>
+        <span className="text-right">Sistema</span>
+      </div>
+      <hr className="text-(--primary)" />
       {data.labels.map((label, i) => (
-        <div className="flex flex-row justify-between" key={label}>
-          <span className="text-sm">{label}</span>
-          <span className="">{mostrarEstrelas(data.datasets[0].data[i])}</span>
+        <div className="grid grid-cols-4 sm:grid-cols-3" key={label}>
+          <span className="text-md text-left col-span-2 sm:col-span-1">{label}</span>
+          <span className="justify-self-end">
+            {mostrarEstrelas(data.datasets[0].data[i])}
+          </span>
+          <span className="justify-self-end">
+            {mostrarEstrelas(data.datasets[1].data[i])}
+          </span>
         </div>
       ))}
-      <span className="">
+      {/* <span className="">
         {pontuacaoTotal.toFixed(1)} de média baseada em {qntdDados} tópicos
-      </span>
+      </span> */}
     </div>
   );
 };
