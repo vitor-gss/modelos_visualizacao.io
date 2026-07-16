@@ -1,3 +1,4 @@
+
 const data = {
   labels: [
     "Estruturas",
