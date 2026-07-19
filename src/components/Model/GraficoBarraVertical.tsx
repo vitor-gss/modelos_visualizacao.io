@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"; 
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,10 +8,11 @@ import {
   Tooltip,
   Legend,
   type ChartOptions,
+  type ChartData, 
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import data from "../../mock/data";
+import { getNetworkData } from "../../services/api";
 
 ChartJS.register(
   CategoryScale,
@@ -54,6 +56,49 @@ const options: ChartOptions<"bar"> = {
 
 
 export const GraficoBarraVertical = () => {
+  const [data, setChartData] = useState<ChartData<"bar"> | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    async function carregarDados() {
+      try {
+        setLoading(true);
+        const tutor_model = await getNetworkData(0);
+        const student_model = await getNetworkData(1);
+        setChartData({
+          labels: tutor_model.names, 
+          datasets: [
+    {
+      label: "Aluno",
+      data: student_model.probabilities,
+      backgroundColor: "#2563eba0",
+      borderColor: "#2563eb"
+    },
+    {
+      label: "Sistema",
+      data: tutor_model.probabilities,
+      backgroundColor: "#0d9488a0",
+      borderColor: "#0d9488"
+    },],
+        });
+      } catch (erro) {
+        console.error("Erro ao buscar dados de rede:", erro);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    carregarDados();
+  }, []); 
+
+  if (loading) {
+    return <div style={{ color: "#e5e7eb" }}>Carregando dados do gráfico...</div>;
+  }
+
+  if (!data) {
+    return <div style={{ color: "#ef4444" }}>Erro ao carregar dados.</div>;
+  }
+
   return (
     <>
       <Bar options={options} data={data} plugins={[ChartDataLabels]} />

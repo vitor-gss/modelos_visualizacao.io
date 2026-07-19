@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey, select
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
@@ -40,6 +40,7 @@ class NodeProbability(Base):
     parent_node_state = Column(String(100), nullable=False)
     fk_node_id = Column(Integer, ForeignKey("node.id"))
     fk_parent_node_id = Column(Integer, ForeignKey("node.id"))
+
 
 def get_db():
     db = SessionLocal()
@@ -90,5 +91,15 @@ def insert_node_probability(db: Session, probability: float, node_state: str,
     db.commit()
     db.refresh(prob)
     return prob
+
+def get_data(db:Session, net:int):
+    stmt = (
+        select(Node.name, NodeProbability.probability)
+        .join(NodeProbability, Node.id == NodeProbability.fk_node_id)
+        .where(Node.fk_network_id == net)
+    )
+    resultados = db.execute(stmt).all()
+    return [{"name": r.name, "probability": r.probability} for r in resultados]
+
 
 Base.metadata.create_all(engine)

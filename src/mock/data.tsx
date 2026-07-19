@@ -1,24 +1,23 @@
+import { getNetworkData } from "../services/api";
 
-const data = {
-  labels: [
-    "Estruturas",
-    "Expressões",
-    "E/S de dados",
-    "Tipo de dados",
-    "Declaração",
-    "Recursividade",
-  ],
-  datasets: [
+export default async function get_data() {
+  try {
+    const tutor_model = await getNetworkData(0);
+    const student_model = await getNetworkData(1);
+    console.log(tutor_model, student_model);
+    const data = {
+    labels: tutor_model.names,
+    datasets: [
     {
       label: "Aluno",
-      data: [10, 30, 60, 80, 55, 100],
+      data: student_model.probabilities,
       backgroundColor: "#2563eba0",
       borderColor: "#2563eb",
       pointBackgroundColor: "#2563eb",
     },
     {
       label: "Sistema",
-      data: [77, 25, 13, 4, 81, 35],
+      data: tutor_model.probabilities,
       backgroundColor: "#0d9488a0",
       borderColor: "#0d9488",
       pointBackgroundColor: "#0d9488",
@@ -27,4 +26,9 @@ const data = {
   
 };
 
-export default data;
+  return data
+  } catch (err) {
+    console.error("Erro ao processar os dados", err);
+    
+  }
+}
