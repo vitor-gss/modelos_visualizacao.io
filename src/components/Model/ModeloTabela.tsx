@@ -51,11 +51,11 @@ export const ModeloTabela = () => {
   }, []);
 
   if (loading) {
-    return <div style={{ color: "#e5e7eb" }}>Carregando dados do gráfico...</div>;
+    return <div>Carregando dados do gráfico...</div>;
   }
 
   if (!data || !data.labels || data.labels.length === 0) {
-    return <div style={{ color: "#e5e7eb" }}>Nenhum dado disponível</div>;
+    return <div>Nenhum dado disponível</div>;
   }
 
   return (

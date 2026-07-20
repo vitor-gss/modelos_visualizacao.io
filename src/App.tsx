@@ -11,7 +11,7 @@ import { GraficoRadar } from "./components/Model/GraficoRadar";
 import { Grafico } from "./components/Model/Grafico";
 import { ModeloEstrelas } from "./components/Model/ModeloEstrelas";
 import { ModeloTabela } from "./components/Model/ModeloTabela";
-import { ModeloTreemap } from "./components/Model/ModeloTreemap";
+// import { ModeloTreemap } from "./components/Model/ModeloTreemap";
 import { ModeloEmojis } from "./components/Model/ModeloEmojis";
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
     { label: "estrelas", ativo: false, componente: ModeloEstrelas },
     { label: "emojis", ativo: false, componente: ModeloEmojis },
     { label: "tabelas", ativo: false, componente: ModeloTabela },
-    { label: "treemap", ativo: false, componente: ModeloTreemap },
+    // { label: "treemap", ativo: false, componente: ModeloTreemap },
   ]);
 
   /**
@@ -87,7 +87,7 @@ function App() {
         className="bg-blue-600 rounded-full p-4 px-8 w-full md:max-w-fit
                     flex flex-row justify-center place-items-center gap-4
                   hover:bg-blue-700 active:bg-blue-800 active:scale-95
-                    ease-in-out duration-200"
+                    ease-in-out duration-200 text-white"
       >
         <ChartBarBig /> Marcar todas as opções
       </button>

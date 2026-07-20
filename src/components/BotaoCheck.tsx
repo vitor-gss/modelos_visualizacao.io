@@ -14,9 +14,9 @@ export const BotaoCheck = ({ label, ativo, onChange }: BotaoCheckProps) => {
       htmlFor={`${label}`}
       className="border rounded-xl card
       px-4 py-2 flex gap-4 cursor-pointer
-      border-gray-500/40 text-gray-400 select-none
-      has-checked:bg-gray-800 has-checked:text-white has-checked:border-(--primary)
-      hover:bg-gray-800 hover:text-white hover:border-(--primary)
+      border-gray-500/40 hover:bg-blue-100 has-checked:bg-blue-100 text-gray-700 select-none
+      has-checked:border-(--primary)
+      hover:border-(--primary)
       duration-300 ease-in-out"
     >
       <input

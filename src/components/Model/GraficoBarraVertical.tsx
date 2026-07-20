@@ -90,13 +90,13 @@ export const GraficoBarraVertical = () => {
 
     carregarDados();
   }, []); 
-
+  
   if (loading) {
-    return <div style={{ color: "#e5e7eb" }}>Carregando dados do gráfico...</div>;
+    return <div >Carregando dados do gráfico...</div>;
   }
 
   if (!data) {
-    return <div style={{ color: "#ef4444" }}>Erro ao carregar dados.</div>;
+    return <div className="text-red-500">Erro ao carregar dados.</div>;
   }
 
   return (
