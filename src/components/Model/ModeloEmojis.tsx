@@ -79,7 +79,7 @@ export const ModeloEmojis = () => {
     }
   };
   return (
-    <div className="flex flex-col h-full w-full justify-between text-white">
+    <div className="flex flex-col h-full w-full justify-between">
       <Cabecalho />
       {data.labels.map((label, i) => (
         <div

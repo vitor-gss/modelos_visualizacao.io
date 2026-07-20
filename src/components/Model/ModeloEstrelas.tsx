@@ -70,7 +70,7 @@ export const ModeloEstrelas = () => {
   };
 
   return (
-    <div className="flex flex-col h-full w-full justify-between text-white">
+    <div className="flex flex-col h-full w-full justify-between">
       <div className="grid grid-cols-3 justify-between text-lg">
         <span className="text-left">Tópico</span>
         <span className="text-right">Aluno</span>
