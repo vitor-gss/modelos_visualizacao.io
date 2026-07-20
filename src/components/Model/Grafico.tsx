@@ -6,5 +6,5 @@ import type { ReactNode } from "react";
  * @returns Componente TSX.
  */
 export const Grafico = ({ children }: { children: ReactNode }) => {
-  return <div className="chart-container border border-gray-500/40 h-100 w-full flex flex-col justify-center place-items-center">{children}</div>;
+  return <div className="chart-container border border-gray-500/40 h-100 w-full flex flex-col justify-center place-items-center text-gray-800">{children}</div>;
 };
