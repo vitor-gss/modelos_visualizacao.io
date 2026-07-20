@@ -34,7 +34,7 @@ const options: ChartOptions<"bar"> = {
     datalabels: {
       anchor: "end",
       align: "right", // Alterado para "right" porque o eixo está em 'y' (barra horizontal)
-      color: "#e5e7eb",
+      color: "#oklch(21% 0.034 264.665)",
       font: { weight: "bold"},
     },
   },

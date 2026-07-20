@@ -76,7 +76,7 @@ export const GraficoRadar = () => {
               ticks: {
                 backdropColor: "transparent",
 
-                color: "white",
+                color: "oklch(21% 0.034 264.665)",
 
                 font: {
                   size: 12,
