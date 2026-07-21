@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
   type ChartOptions,
-  type ChartData, 
+  type ChartData,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -25,17 +25,23 @@ ChartJS.register(
 );
 
 const options: ChartOptions<"bar"> = {
-  indexAxis: 'y',
+  indexAxis: "y",
   responsive: true,
   maintainAspectRatio: false,
   aspectRatio: 2,
   plugins: {
-    legend: { display: true },
+    legend: {
+      display: true,
+      labels: {
+        color: "#oklch(21% 0.034 264.665)",
+      },
+    },
+
     datalabels: {
       anchor: "end",
       align: "right", // Alterado para "right" porque o eixo está em 'y' (barra horizontal)
       color: "#oklch(21% 0.034 264.665)",
-      font: { weight: "bold"},
+      font: { weight: "bold" },
     },
   },
   scales: {
@@ -61,20 +67,21 @@ export const GraficoBarraLateral = () => {
         const tutor_model = await getNetworkData(0);
         const student_model = await getNetworkData(1);
         setChartData({
-          labels: tutor_model.names, 
+          labels: tutor_model.names,
           datasets: [
-    {
-      label: "Aluno",
-      data: student_model.probabilities,
-      backgroundColor: "#2563eba0",
-      borderColor: "#2563eb"
-    },
-    {
-      label: "Sistema",
-      data: tutor_model.probabilities,
-      backgroundColor: "#0d9488a0",
-      borderColor: "#0d9488"
-    },],
+            {
+              label: "Aluno",
+              data: student_model.probabilities,
+              backgroundColor: "#2563ebcc",
+              borderColor: "#2563eb",
+            },
+            {
+              label: "Sistema",
+              data: tutor_model.probabilities,
+              backgroundColor: "#0d9488cc",
+              borderColor: "#0d9488",
+            },
+          ],
         });
       } catch (erro) {
         console.error("Erro ao buscar dados de rede:", erro);
@@ -84,10 +91,10 @@ export const GraficoBarraLateral = () => {
     }
 
     carregarDados();
-  }, []); 
+  }, []);
 
   if (loading) {
-    return <div >Carregando dados do gráfico...</div>;
+    return <div>Carregando dados do gráfico...</div>;
   }
 
   if (!chartData) {
@@ -95,7 +102,9 @@ export const GraficoBarraLateral = () => {
   }
 
   return (
-    <div style={{ height: "300px", width: "100%" }}> {/* Container para respeitar o maintainAspectRatio: false */}
+    <div style={{ height: "300px", width: "100%" }}>
+      {" "}
+      {/* Container para respeitar o maintainAspectRatio: false */}
       <Bar options={options} data={chartData} plugins={[ChartDataLabels]} />
     </div>
   );

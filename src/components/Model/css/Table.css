@@ -21,7 +21,11 @@ td:last-of-type {
 }
 
 tbody > tr:nth-of-type(even) {
-  background-color: var(--color-blue-500);
+  background-color: var(--color-blue-600);
+}
+
+tbody > tr:nth-of-type(odd) {
+  background-color: var(--color-blue-400);
 }
 
 tfoot th {

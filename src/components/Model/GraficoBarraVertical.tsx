@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
   type ChartOptions,
-  type ChartData, 
+  type ChartData,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -25,12 +25,17 @@ ChartJS.register(
 );
 
 const options: ChartOptions<"bar"> = {
-  indexAxis: 'x',
+  indexAxis: "x",
   responsive: true,
   maintainAspectRatio: false,
   aspectRatio: 2,
   plugins: {
-    legend: { display: true },
+    legend: {
+      display: true,
+      labels: {
+        color: "#oklch(21% 0.034 264.665)",
+      },
+    },
     datalabels: {
       anchor: "end",
       align: "top",
@@ -44,16 +49,15 @@ const options: ChartOptions<"bar"> = {
     },
     x: {
       ticks: {
-      maxRotation: 45,
-      minRotation: 0
-    },
+        maxRotation: 45,
+        minRotation: 0,
+      },
       grid: {
         display: false,
       },
     },
   },
 };
-
 
 export const GraficoBarraVertical = () => {
   const [data, setChartData] = useState<ChartData<"bar"> | null>(null);
@@ -66,20 +70,21 @@ export const GraficoBarraVertical = () => {
         const tutor_model = await getNetworkData(0);
         const student_model = await getNetworkData(1);
         setChartData({
-          labels: tutor_model.names, 
+          labels: tutor_model.names,
           datasets: [
-    {
-      label: "Aluno",
-      data: student_model.probabilities,
-      backgroundColor: "#2563eba0",
-      borderColor: "#2563eb"
-    },
-    {
-      label: "Sistema",
-      data: tutor_model.probabilities,
-      backgroundColor: "#0d9488a0",
-      borderColor: "#0d9488"
-    },],
+            {
+              label: "Aluno",
+              data: student_model.probabilities,
+              backgroundColor: "#2563ebcc",
+              borderColor: "#2563eb",
+            },
+            {
+              label: "Sistema",
+              data: tutor_model.probabilities,
+              backgroundColor: "#0d9488cc",
+              borderColor: "#0d9488",
+            },
+          ],
         });
       } catch (erro) {
         console.error("Erro ao buscar dados de rede:", erro);
@@ -89,10 +94,10 @@ export const GraficoBarraVertical = () => {
     }
 
     carregarDados();
-  }, []); 
-  
+  }, []);
+
   if (loading) {
-    return <div >Carregando dados do gráfico...</div>;
+    return <div>Carregando dados do gráfico...</div>;
   }
 
   if (!data) {
