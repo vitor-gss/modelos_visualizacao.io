@@ -33,13 +33,13 @@ const options: ChartOptions<"bar"> = {
     legend: {
       display: true,
       labels: {
-        color: "#oklch(21% 0.034 264.665)",
+        color: "oklch(21% 0.034 264.665)",
       },
     },
     datalabels: {
       anchor: "end",
       align: "top",
-      color: "#oklch(21% 0.034 264.665)",
+      color: "oklch(21% 0.034 264.665)",
       font: { weight: "bold" },
     },
   },
